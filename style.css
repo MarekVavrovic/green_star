@@ -907,7 +907,9 @@ section.slider {
 /* Testimony */
 
 .wrapper-testimony {
+  position: relative;
   text-align: center;
+  height: 85vh; /* Fixed height instead of min-height */
   background-image: url("/img/testimony/testimonials_bg.png");
   background-repeat: no-repeat;
   background-size: cover;
@@ -916,8 +918,10 @@ section.slider {
   width: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  padding: 3rem 1rem;
+  margin: 3rem 0;
+  overflow: hidden; /* prevent content overflow */
 }
 
 .testimony-inner {
@@ -928,11 +932,12 @@ section.slider {
   align-items: center;
 }
 
-.testimony-wrapper {
-  width: 100%;
-  position: relative;
-}
 
+.testimony-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
 
 .testimony-icon img {
   width: 100px;
@@ -942,23 +947,35 @@ section.slider {
 }
 
 .item {
-  display: none;
+  position: absolute;
+  top: 0;
+  left: 100%;
   width: 100%;
-  transition: opacity 0.3s ease-in-out;
+  height: 100%;
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-
 /* Only show the active one */
 .item.active-item {
-  display: block;
+  transform: translateX(0);
+  left: 0;
+  opacity: 1;
+  z-index: 1;
 }
-
 .item.next-item {
   transform: translateX(100%);
-  /* display: none; */
+    z-index: 0;
 }
 
 .testimony-content {
+  max-width: 1050px;
   padding: 1rem;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .testimony-content h6 {
@@ -984,13 +1001,13 @@ section.slider {
 }
 /* next-prev buttons */
 .item-hearts {
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-top: 2rem;
-  gap: 1rem;
+  z-index: 2;
 }
-
 .item-hearts .item-heart {
   margin: 1rem 10px;
   font-size: 20px;
@@ -1007,10 +1024,10 @@ section.slider {
 
 @media screen and (min-width: 768px) {
   .wrapper-testimony {
-    min-height: 60vh;
+    height: 60vh;
   }
   .testimony-wrapper {
-    min-height: 60vh;
+    height: 60vh;
   }
 }
 
