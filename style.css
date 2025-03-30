@@ -904,11 +904,10 @@ section.slider {
 
 /* Testimony */
 
-/* Testimony - Updated with Flexbox Solution */
+/* Testimony */
+
 .wrapper-testimony {
-  position: relative;
   text-align: center;
-  min-height: 85vh;
   background-image: url("/img/testimony/testimonials_bg.png");
   background-repeat: no-repeat;
   background-size: cover;
@@ -917,64 +916,57 @@ section.slider {
   width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Keeps vertical centering of main content */
   align-items: center;
-  margin: 3rem 0;
-  padding: 2rem 0 80px; /* Added bottom padding for hearts */
+  padding: 3rem 1rem;
+}
+
+.testimony-inner {
+  width: 100%;
+  max-width: 1050px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .testimony-wrapper {
-  position: relative;
-  overflow: hidden;
   width: 100%;
-  flex: 1; /* Takes available space */
-  display: flex;
-  flex-direction: column;
-  justify-content: center; /* Centers testimony content vertically */
+  position: relative;
 }
 
-/* Rest of your existing testimony styles remain unchanged */
+
 .testimony-icon img {
   width: 100px;
   height: 100px;
   object-fit: cover;
   margin: 2rem 0;
-  background-color: transparent;
 }
 
 .item {
-  position: absolute;
-  top: 0;
-  left: 0;
+  display: none;
   width: 100%;
-  height: 100%;
-  transition: all 0.3s ease-in-out;
-  overflow: hidden;
-  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
 }
 
+/* Only show the active one */
 .item.active-item {
-  opacity: 1;
-  transform: translateX(0);
+  display: block;
 }
 
 .item.next-item {
   transform: translateX(100%);
+  /* display: none; */
 }
 
 .testimony-content {
-  max-width: 1050px;
-  padding: 0 25px;
-  width: 100%;
-  margin: 0 auto;
+  padding: 1rem;
 }
 
 .testimony-content h6 {
   color: #ffffff;
-  font-family: "Open Sans", sans-serif;
-  font-size: 22px;
-  font-weight: 100;
-  margin: 1.5rem 1rem;
+  font-size: 18px;
+  font-weight: 300;
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
 }
 
 .testimony-content .deliminer {
@@ -990,22 +982,17 @@ section.slider {
   font-size: 15px;
   margin: 1rem 0;
 }
-
-/* Updated hearts positioning */
+/* next-prev buttons */
 .item-hearts {
-  position: relative; /* Changed from absolute */
-  width: 100%;
-  margin: 20px auto 0;
-  padding-bottom: 20px;
   display: flex;
   justify-content: center;
-  transform: none; /* Removed translateX since we're not absolutely positioning */
-  left: auto;
-  bottom: auto;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+  gap: 1rem;
 }
 
 .item-hearts .item-heart {
-  margin: 0 10px; /* Adjusted from 1rem 10px */
+  margin: 1rem 10px;
   font-size: 20px;
   color: #ffffff;
   opacity: 0.6;
@@ -1018,25 +1005,15 @@ section.slider {
   opacity: 1;
 }
 
-/* Media queries - Updated to work with new flex layout */
 @media screen and (min-width: 768px) {
   .wrapper-testimony {
     min-height: 60vh;
-    padding-bottom: 2rem; /* Reduced padding for desktop */
   }
-  
   .testimony-wrapper {
-    min-height: auto; /* Let content determine height */
-  }
-  
-  /* Optional: You might want to restore absolute positioning on desktop */
-  .item-hearts {
-    position: absolute;
-    bottom: 2rem;
-    left: 50%;
-    transform: translateX(-50%);
+    min-height: 60vh;
   }
 }
+
 
 /* GALLERY */
 .space p {
