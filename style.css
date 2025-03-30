@@ -1145,7 +1145,7 @@ Modal
   width: 90%;
   max-width: 1170px;
   margin: 0 auto;
-  margin-top: 10rem;
+  margin-top: 6rem;
   position: relative;
   opacity: 0;
   transform: scale(0.3);
@@ -1266,17 +1266,9 @@ Modal
   height: 30px;
 }
 
-/* .btn-play.playing {
-  filter: brightness(0) saturate(100%) sepia(1) hue-rotate(90deg);
-} */
-
-
 @media screen and (min-width: 768px) {
   .modal {
     overflow: hidden;
-  }
-  .modal-content {
-    margin-top: 8rem;
   }
 
   .main-img {
@@ -1286,10 +1278,9 @@ Modal
   }
 
   .modal-img {
-  width: 4rem;
-  height: 3rem;
-
-}
+    width: 4rem;
+    height: 3rem;
+  }
 }
 
 @media screen and (min-width: 1100px) {

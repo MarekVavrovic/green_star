@@ -1,6 +1,8 @@
+const BASE_PATH = window.location.hostname === "localhost" ? "" : "/green_star";
+
 const sliders = [
   {
-    img_1: "./img/hero/slide1-cloud.png",
+    img_1: `./img/hero/slide1-cloud.png`,
     img_2: "./img/hero/slide1-star.png",
     img_3: "./img/hero/slide1-cloud.png",
     img_4: "./img/hero/slide1-star.png",
