@@ -942,7 +942,6 @@ section.slider {
   height: 100%;
   transition: all 0.3s ease-in-out;
   overflow-x: hidden;
-
   opacity: 0;
 }
 
@@ -953,15 +952,14 @@ section.slider {
 
 .item.next-item {
   transform: translateX(100%);
-  /* display: none; */
 }
 
 .testimony-content {
   max-width: 1050px;
   padding: 0 25px;
   width: 100%;
-
   margin: 0 auto;
+  min-height: 100vw;
 }
 .testimony-content h6 {
   color: #ffffff;
