@@ -907,7 +907,7 @@ section.slider {
 .wrapper-testimony {
   position: relative;
   text-align: center;
-  min-height: 85vh;
+  min-height: 100vh;
   background-image: url("/img/testimony/testimonials_bg.png");
   background-repeat: no-repeat;
   background-size: cover;
@@ -924,8 +924,7 @@ section.slider {
 .testimony-wrapper {
   position: relative;
   overflow: hidden;
-  width: 100%;
-  /* height: 100%;  */
+  width: 100%; 
   min-height: 100vh;
 }
 .testimony-icon img {
