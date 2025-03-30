@@ -133,8 +133,8 @@ const updateHeartColorsAndBackground = () => {
     : "#f25141";
 
   sliderSection.style.backgroundImage = isFirstSlideActive
-    ? 'url("/img/hero/background-11.jpg")'
-    : 'url("/img/hero/background-2.jpg")';
+    ? 'url("./img/hero/background-11.jpg")'
+    : 'url("./img/hero/background-2.jpg")';
 };
 
 const startSlider = (type) => {
@@ -402,7 +402,7 @@ document.addEventListener("DOMContentLoaded", function () {
             alt="${alt}"
           />
           <div class="overlay">
-            <img src="/img/gallery/photo.png" alt="icon" class="icon" />
+            <img src="./img/gallery/photo.png" alt="icon" class="icon" />
           </div>
         </div>`;
     })
