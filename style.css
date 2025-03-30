@@ -909,7 +909,7 @@ section.slider {
 .wrapper-testimony {
   position: relative;
   text-align: center;
-  height: 85vh; /* Fixed height instead of min-height */
+  min-height: 85vh; /* Fixed height instead of min-height */
   background-image: url("/img/testimony/testimonials_bg.png");
   background-repeat: no-repeat;
   background-size: cover;
@@ -952,7 +952,8 @@ section.slider {
   left: 100%;
   width: 100%;
   height: 100%;
-  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+  /* transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out; */
+    transition: all 0.3s ease-in-out;
   opacity: 0;
   display: flex;
   flex-direction: column;
@@ -1024,10 +1025,10 @@ section.slider {
 
 @media screen and (min-width: 768px) {
   .wrapper-testimony {
-    height: 60vh;
+    min-height: 60vh;
   }
   .testimony-wrapper {
-    height: 60vh;
+    min-height: 60vh;
   }
 }
 
