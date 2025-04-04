@@ -201,56 +201,54 @@
     <article class="wrapper-testimony">
       <!-- item-1 -->
       <div class="testimony-inner">
-          <div class="testimony-wrapper">
-        <div class="item">
-          <div class="testimony-icon">
-            <img src="./img/testimony/quote_icon.png" alt="icon" />
-          </div>
-          <div class="testimony-content">
-            <h6>
-              Dcérka do Hviezdičky chodila vyše roka, boli sme maximálne
-              spokojní. Vyslovene sa tešila na detičky, učiteľky a prostredie.
-              Ak malo niektoré z detičiek zdravotný problém, hneď sme o tom
-              vedeli, čo veľmi oceňujem. Velmi milý prístup, veľké priestory a
-              kopec možností. Naša malá išla rýchlo napredovala a bolo vidno, že
-              sa deťom naozaj venujú. Palec hore!
-            </h6>
-            <div class="deliminer"></div>
-            <div class="author"><strong> mamina </strong>Martina, 2017</div>
+        <div class="testimony-wrapper">
+          <div class="item">
+            <div class="testimony-icon">
+              <img src="./img/testimony/quote_icon.png" alt="icon" />
+            </div>
+            <div class="testimony-content">
+              <h6>
+                Dcérka do Hviezdičky chodila vyše roka, boli sme maximálne
+                spokojní. Vyslovene sa tešila na detičky, učiteľky a prostredie.
+                Ak malo niektoré z detičiek zdravotný problém, hneď sme o tom
+                vedeli, čo veľmi oceňujem. Velmi milý prístup, veľké priestory a
+                kopec možností. Naša malá išla rýchlo napredovala a bolo vidno,
+                že sa deťom naozaj venujú. Palec hore!
+              </h6>
+              <div class="deliminer"></div>
+              <div class="author"><strong> mamina </strong>Martina, 2017</div>
+            </div>
           </div>
         </div>
+
+        <!-- buttons -->
+        <div class="item-hearts">
+          <button class="item-heart active-heart">
+            <i class="fa-solid fa-heart"></i>
+          </button>
+
+          <button class="item-heart">
+            <i class="fa-solid fa-heart"></i>
+          </button>
+
+          <button class="item-heart">
+            <i class="fa-solid fa-heart"></i>
+          </button>
+
+          <button class="item-heart">
+            <i class="fa-solid fa-heart"></i>
+          </button>
+
+          <button class="item-heart">
+            <i class="fa-solid fa-heart"></i>
+          </button>
+
+          <button class="item-heart">
+            <i class="fa-solid fa-heart"></i>
+          </button>
+        </div>
       </div>
-
-      <!-- buttons -->
-      <div class="item-hearts">
-        <button class="item-heart active-heart">
-          <i class="fa-solid fa-heart"></i>
-        </button>
-
-        <button class="item-heart">
-          <i class="fa-solid fa-heart"></i>
-        </button>
-
-        <button class="item-heart">
-          <i class="fa-solid fa-heart"></i>
-        </button>
-
-        <button class="item-heart">
-          <i class="fa-solid fa-heart"></i>
-        </button>
-
-        <button class="item-heart">
-          <i class="fa-solid fa-heart"></i>
-        </button>
-
-        <button class="item-heart">
-          <i class="fa-solid fa-heart"></i>
-        </button>
-      </div>
-      </div>
-    
     </article>
-
 
     <!-- Gallery -->
     <section class="container">
@@ -388,7 +386,130 @@
       </div>
     </div>
 
-    <main class="next-article"></main>
+    <section class="wrapper-contact">
+      <div class="wrapper-inner">
+        <article class="contact-form">
+          <div class="contact-title">Kontaktujte nás</div>
+          <form action="https://formspree.io/f/xyzengyo" method="POST">
+            <div class="form-group">
+              <!--inputs-->
+              <input
+                type="text"
+                placeholder="Vaše meno"
+                class="form-control"
+                name="name"
+              />
+              <span role="alert" class="not-valid-tip">Pole je povinné.</span>
+              <input
+                type="email"
+                placeholder="Email"
+                class="form-control"
+                name="email"
+              />
+              <span role="alert" class="not-valid-tip">Pole je povinné.</span>
+              <textarea
+                name="message"
+                placeholder="Správa"
+                rows="8"
+                class="form-control"
+              ></textarea>
+            </div>
+            <!--button-->
+            <button type="submit" class="yellow-button">Odoslať</button>
+            <div class="validation-error" role="alert">
+              Jedno alebo viac polí obsahuje chybu. Prosím skontrolujte a skúste
+              znovu.
+            </div>
+          </form>
+        </article>
+
+        <article class="contact-info">
+          <div class="address">
+            <span class="flaticon-location"></span> Mierová 103/A, 821 05
+            Bratislava-Ružinov
+          </div>
+          <div class="google-map-outer">
+            <div class="google-map-inner">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d665.4983418478623!2d17.176083155508856!3d48.14893309572191!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x476c88cffab91e8d%3A0xc87f57b6c167448f!2zRGV0c2vDqSBvcGF0cm92YXRlxL5za8OpIGNlbnRydW0gWmVsZW7DoSBIdmllemRpxI1rYQ!5e0!3m2!1sen!2suk!4v1743609755138!5m2!1sen!2suk"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- <footer>
+      
+      <div class="sidebar-footer">
+        <div class="container-footer">
+          <div class="row">
+            <aside class="widget">
+              <div class="title-footer">
+                <h2>O nás</h2>
+              </div>
+              <div class="textwidget">
+                <p>
+                  Zelená Hviezdička funguje už od roku 2011 - vďaka nášmu
+                  prístupu a vašej spokojnosti.
+                </p>
+              </div>
+            </aside>
+            <aside class="widget">
+              <div class="title-footer">
+                <h2>Akcie a benefity</h2>
+              </div>
+              <div class="textwidget">
+                <ul>
+                  <li>
+                    <span class="flaticon-check"></span> Súrodenecká zľava
+                  </li>
+                  <li>
+                    <span class="flaticon-check"></span> Zľava za kamaráta
+                  </li>
+                  <li>
+                    <span class="flaticon-check"></span> Zľava za zazmluvnenie
+                    na rok
+                  </li>
+                </ul>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </div>
+   
+<div class="site-info">
+  <div class="container site-info-container">
+    <div class="row site-info-row">
+      <div class="info-a">
+        <div class="copyright">
+          © 2018 Detské centrum - Zelená Hviezdička, všetky práva vyhradené
+        </div>
+      </div>
+      <div class="info-b">
+        <ul class="social">
+          <li>
+            <a
+              href="https://www.facebook.com/zelenahviezdicka/"
+              title="Facebook"
+              target="_blank"
+              rel="noopener"
+            >
+              <i class="fa-brands fa-facebook-f"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+    </footer> -->
+    <div id="footer-placeholder"></div>
+    <script src="/js/footer.js"></script>
     <script type="module" src="app.js"></script>
   </body>
 </html>
