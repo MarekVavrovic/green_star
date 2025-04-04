@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Anaheim&family=Salsa&display=swap");
+
 /*
 =============== 
 Variables
@@ -28,13 +30,9 @@ body {
   color: #333;
   background-color: #fff;
   font-size: 0.875rem;
-  font-weight: 400;
+  font-weight: 100;
 }
-.salsa-regular {
-  font-family: "Salsa", cursive;
-  font-weight: 400;
-  font-style: normal;
-}
+
 ul {
   list-style-type: none;
 }
@@ -724,9 +722,9 @@ section.slider {
 }
 
 .container .title {
-  font-family: "Salsa", cursive;
+ font-family: "Kalam", cursive;
+  font-weight: 300;
   font-size: 28px;
-  font-weight: 400;
   margin: 3rem auto;
   color: #704825;
 }
@@ -822,7 +820,8 @@ section.slider {
   position: relative;
   display: flex;
   font-size: 18px;
-  font-family: "Salsa", cursive;
+   font-family: "Kalam", cursive;
+  font-weight: 300;
   margin: 20px 0;
 }
 .circle-title.title-red {
@@ -1329,7 +1328,8 @@ Modal
 .contact-title {
   font-size: 24px;
   color: #fff;
-  font-family: "Salsa", cursive;
+   font-family: "Kalam", cursive;
+  font-weight: 300;
   padding-bottom: 1rem;
 }
 
@@ -1446,8 +1446,10 @@ Modal
   display: flex;
   margin: 0 auto;
 }
+
 .container-footer .title-footer {
-  font-family: "Salsa", cursive;
+  font-family: "Kalam", cursive;
+  font-weight: 100;
   font-size: 28px;
   font-weight: 400;
   margin: 0.5rem auto;
@@ -1480,7 +1482,8 @@ aside p {
 }
 .sidebar-footer h2 {
   padding-top: 0px;
-  font-family: "Salsa", cursive;
+   font-family: "Kalam", cursive;
+  font-weight: 300;
   font-size: 24px;
   color: #fff;
 }
@@ -1564,7 +1567,6 @@ aside p {
 
 .social a:hover {
   opacity: 0.7;
-  
 }
 
 @media screen and (min-width: 768px) {
@@ -1586,5 +1588,249 @@ aside p {
   .info-b {
     flex: 0;
     text-align: right;
+  }
+}
+
+/* ABOUT US */
+
+/* .container {
+  max-width: 1050px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}  */
+
+.site-main {
+  width: 100%;
+  font-family: "Open sans", sans-serif;
+  font-size: 16px;
+  color: #333;
+  background-color: #fff;
+}
+.article {
+  width: 100%;
+}
+
+article.hidden {
+  display: none;
+  margin: 0 auto;
+}
+.hidden-wrapper {
+  max-width: 1050px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+.hidden-wrapper p {
+  text-align: left;
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+}
+
+.img-about-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+.img-about {
+  height: auto;
+  max-width: 100%;
+  object-fit: contain;
+  cursor: pointer;
+  transition: transform 0.3s ease-in;
+}
+.section-wrapper {
+  margin: 1.5rem 0;
+}
+.section-wrapper h2 {
+  font-size: 32px;
+  color: #f4b700;
+  line-height: 1.2;
+  text-align: justify;
+  font-family: Anaheim;
+  font-weight: 400;
+  font-style: normal;
+  margin: 1.5rem 0;
+}
+.detail-wrapper {
+  margin-bottom: 3rem;
+}
+.detail-wrapper ul li {
+  display: list-item;
+  text-align: start;
+  list-style-type: disc;
+  color: #707070;
+  margin-left: 1rem;
+}
+
+.detail-wrapper ul li::marker {
+  font-size: 1rem;
+}
+.time-table h2 {
+  font-size: 32px;
+  color: #f4b700;
+  line-height: 1.2;
+  text-align: left;
+  font-family: Anaheim;
+  font-weight: 400;
+  font-style: normal;
+  margin: 1.5rem 0;
+}
+
+.column-element b,
+.column-element p {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1rem;
+  color: #777777;
+  text-align: justify;
+  margin-bottom: 1rem;
+}
+
+@media screen and (min-width: 768px) {
+  .section-wrapper {
+    display: flex;
+  }
+  .detail-wrapper {
+    margin-top: -2rem;
+    padding: 1.5rem;
+    flex: 1 1 100%;
+  }
+  .img-about-wrapper {
+    max-width: 50%;
+    padding: 1.5rem;
+    flex: 1 1 100%;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  article.hidden {
+    display: flex;
+    max-width: 1050px;
+    margin: 0 auto;
+  }
+}
+
+/* CENNIK */
+
+.pricing-options {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+
+.pricing-card {
+  width: 280px;
+
+  border-radius: 20px;
+  overflow: hidden;
+  font-family: "Open Sans", sans-serif;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Top section */
+.card-top {
+  padding: 3.5rem 1rem 4rem;
+  text-align: center;
+}
+
+.card-top h3 {
+  font-size: 1.5rem;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.card-top .time {
+  color: #fff;
+  font-size: 0.9rem;
+}
+
+/* Bottom section */
+.card-bottom {
+  padding-top: 8rem;
+  padding-bottom: 3rem;
+  text-align: center;
+}
+
+.price-circle {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  margin: -175px auto 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 0 6px #fff;
+  position: relative;
+  z-index: 2;
+}
+
+.price-circle .euro {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+.price-circle .per {
+  font-size: 0.8rem;
+  color: #fff;
+}
+
+/* === COLOR VARIANTS === */
+
+/* Yellow Theme */
+.top-yellow {
+  background-color: #eac223;
+}
+
+.bottom-yellow {
+  background-color: #f8f8f8;
+}
+
+.circle-yellow {
+  background-color: #eac223;
+}
+
+/* Green Theme */
+.top-green {
+  background-color: #93c524;
+}
+
+.bottom-green {
+  background-color: #f8f8f8;
+}
+
+.circle-green {
+  background-color: #93c524;
+}
+
+.wrapper-food {
+  display: block;
+  text-align: left;
+  line-height: 2.2;
+  margin: 3rem 0;
+}
+
+.wrapper-food h4 > span {
+  font-size: 20px;
+  color: #000000;
+  text-align: justify;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+}
+
+.wrapper-food a {
+  color: #704f32;
+  font-size: 20px;
+  font-weight: 200;
+}
+
+@media screen and (min-width: 768px) {
+  .pricing-options {
+    flex-direction: row;
+    gap: 4rem;
   }
 }
