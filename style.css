@@ -722,7 +722,7 @@ section.slider {
 }
 
 .container .title {
- font-family: "Kalam", cursive;
+  font-family: "Kalam", cursive;
   font-weight: 300;
   font-size: 28px;
   margin: 3rem auto;
@@ -820,7 +820,7 @@ section.slider {
   position: relative;
   display: flex;
   font-size: 18px;
-   font-family: "Kalam", cursive;
+  font-family: "Kalam", cursive;
   font-weight: 300;
   margin: 20px 0;
 }
@@ -867,7 +867,6 @@ section.slider {
   font-size: 18px;
   padding: 7px 20px;
   text-wrap: nowrap;
-
   transition: color 0.25s ease-in-out, background-color 0.25s ease-in-out;
 }
 .yellow-button:hover {
@@ -1037,11 +1036,15 @@ section.slider {
   text-align: center;
 }
 
-.gallery {
+.gallery,
+.galleryTwo {
   width: 100%;
   display: grid;
   margin-bottom: 2rem;
   gap: 5px;
+}
+.galleryTwo {
+  gap: 1rem;
 }
 .img-wrapper {
   position: relative;
@@ -1087,6 +1090,9 @@ section.slider {
 @media screen and (min-width: 768px) {
   .gallery {
     grid-template-columns: repeat(4, 1fr);
+  }
+  .galleryTwo {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
@@ -1328,7 +1334,7 @@ Modal
 .contact-title {
   font-size: 24px;
   color: #fff;
-   font-family: "Kalam", cursive;
+  font-family: "Kalam", cursive;
   font-weight: 300;
   padding-bottom: 1rem;
 }
@@ -1482,7 +1488,7 @@ aside p {
 }
 .sidebar-footer h2 {
   padding-top: 0px;
-   font-family: "Kalam", cursive;
+  font-family: "Kalam", cursive;
   font-weight: 300;
   font-size: 24px;
   color: #fff;
@@ -1593,13 +1599,6 @@ aside p {
 
 /* ABOUT US */
 
-/* .container {
-  max-width: 1050px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-}  */
-
 .site-main {
   width: 100%;
   font-family: "Open sans", sans-serif;
@@ -1681,7 +1680,7 @@ article.hidden {
 .column-element p {
   font-family: "Open Sans", sans-serif;
   font-size: 1rem;
-  color: #777777;
+  color: #3b3939;
   text-align: justify;
   margin-bottom: 1rem;
 }
@@ -1730,7 +1729,6 @@ article.hidden {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-/* Top section */
 .card-top {
   padding: 3.5rem 1rem 4rem;
   text-align: center;
@@ -1747,7 +1745,6 @@ article.hidden {
   font-size: 0.9rem;
 }
 
-/* Bottom section */
 .card-bottom {
   padding-top: 8rem;
   padding-bottom: 3rem;
@@ -1834,3 +1831,155 @@ article.hidden {
     gap: 4rem;
   }
 }
+
+/* ==CONTACT PAGE== */
+
+article.google-maps {
+  width: 100%;
+  background-color: #f6141b;
+}
+
+.maps-outer {
+  width: 100%;
+  background-color: #e8eaed;
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.maps-inner {
+  width: 100%;
+  height: 45vh;
+  position: relative;
+}
+
+.maps-inner iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  border-radius: 8px;
+}
+.contact-outer {
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.9);
+  position: relative;
+}
+
+.contact-inner {
+  max-width: 1050px;
+  margin: 0 auto;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-wrapper{
+ padding:1rem;
+  margin: 0 auto;
+  text-align: center;
+  line-height: 1.6rem
+}
+.contact-wrapper h1{
+  margin: 1rem 0;
+  letter-spacing: 2px;
+}
+.contact-wrapper span{
+  color: #704825;
+  font-size: 24px;
+  font-family: "Open Sans",sans-serif;
+  font-weight: 200;
+}
+.contact-wrapper p{
+  font-size: 1rem;
+  font-family: "Open Sans",sans-serif;
+  color: #777777;
+}
+
+.contact-wrapper a{
+   color: #704825;
+   font-size: 1rem;
+  font-family: "Open Sans",sans-serif;
+  font-weight: 400;
+  text-decoration:underline;
+}
+
+.container-xx1 {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* vertical centering */
+  align-items: center;     /* horizontal centering */
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+.container-xx1 .title {
+  font-family: "Kalam", cursive;
+  font-weight: 300;
+  font-size: 28px;
+  margin: 3rem auto;
+  color: #704825;
+
+}
+
+.container-xx1 .title::after {
+  content: "";
+  display: block;
+  margin: 2rem auto 0 auto;
+  width: 60px;
+  height: 4px;
+  border-radius: 2px;
+  background-color: #ffd823;
+}
+
+.xx-2{
+  font-size: 2.5rem;
+  font-weight: 400;
+}
+
+.contact-form-xx-3 {
+  width: 100%;
+  max-width: 600px;
+  padding: 1rem;
+
+}
+
+.form-control-xx3 {
+  display: block;
+  width: 100%;         
+  padding: 0.75rem 1rem;
+  border: transparent;
+  margin-bottom: 1.25rem;
+  background-color: #f6f6f6;
+  border-radius: 0.25rem;
+  color: #fff;
+}
+.form-button-wrapper {
+  text-align: left;
+}
+
+
+.form-control-xx3::placeholder {
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  color: #777777;
+ 
+}
+
+@media screen and (min-width: 768px) {
+  .maps-inner {
+    height: 40vh;
+  }
+
+  .contact-inner {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+

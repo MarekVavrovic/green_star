@@ -140,4 +140,38 @@ export const galleryData = [
     alt: "photo-7",
   },
 ];
+
+export const galleryDataTwo = [
+  {
+    src: "./img/gallery/1.jpg",
+    id: 1,
+    alt: "photo-1",
+  },
+  {
+    src: "./img/gallery/2.jpg",
+    id: 2,
+    alt: "photo-2",
+  },
+  {
+    src: "./img/gallery/3.jpg",
+    id: 3,
+    alt: "photo-3",
+  },
+  {
+    src: "./img/gallery/4.jpg",
+    id: 4,
+    alt: "photo-4",
+  },
+  {
+    src: "./img/gallery/5.jpg",
+    id: 5,
+    alt: "photo-5",
+  },
+  {
+    src: "./img/gallery/6.jpg",
+    id: 6,
+    alt: "photo-6",
+  },
+
+];
 export default sliders;

@@ -9,7 +9,7 @@
     />
 
     <link rel="stylesheet" href="style.css" />
-    <title>Cennik</title>
+    <title>Gallery</title>
   </head>
   <body>
     <header>
@@ -68,44 +68,69 @@
         </div>
       </nav>
     </header>
-    <h1>GALERIA</h1>
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia laborum
-      blanditiis accusantium nisi temporibus excepturi neque repellat cumque,
-      alias ab totam vitae quaerat recusandae veritatis quam nesciunt sunt saepe
-      inventore?
-    </p>
-    <p>
-      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea doloribus,
-      alias natus odit debitis ratione ex ut repudiandae aspernatur a quo rerum
-      dolor soluta magni nisi fuga? Officia expedita, voluptatem minima maxime
-      quia, quod provident adipisci suscipit, eaque similique tenetur. Quos
-      voluptatem ipsam, tenetur nam vitae ducimus dicta incidunt quasi nemo
-      molestiae maxime voluptatibus consequuntur veritatis sit doloribus? Nisi
-      consequatur itaque tempora placeat temporibus nesciunt non ratione quia
-      blanditiis maxime atque a id asperiores officiis quaerat consectetur error
-      quisquam vel architecto aliquam libero, enim iusto. Blanditiis magni
-      placeat praesentium modi consectetur. Ipsa sint necessitatibus fuga
-      tenetur dolorum nemo quam sequi soluta quidem odit officia dolor
-      voluptates totam perferendis mollitia veniam pariatur, blanditiis
-      voluptatum aperiam nihil placeat nisi facilis id praesentium. Quisquam
-      minus debitis eum tempora, quasi perferendis recusandae earum ratione odio
-      quia inventore vero ex repellat. Maiores odit odio esse velit vero est,
-      quod eveniet architecto modi ea tenetur natus quaerat commodi
-      necessitatibus unde qui iusto quo possimus? Eos, optio. Magnam deleniti
-      ipsum id, sed rerum sit pariatur inventore a deserunt, explicabo
-      voluptatibus accusamus praesentium quibusdam animi atque reprehenderit
-      exercitationem, unde repudiandae recusandae expedita odit nihil corporis!
-      Quasi et saepe molestias, nihil, sint consequuntur voluptatem unde dolores
-      magni quam temporibus quod eius aperiam minima tempore ipsa in excepturi
-      fugit, maxime vero rerum dolor assumenda accusantium. Tempora, minima
-      rerum quisquam quae cupiditate, nulla quo ea culpa sed adipisci libero.
-      Nihil explicabo, odio eveniet aliquid temporibus earum dolore maxime ipsa
-      saepe, aperiam cum nobis, esse dolorem officiis at mollitia ratione sed
-      eum.
-    </p>
-   <div id="footer-placeholder"></div>
+
+        <!-- Gallery -->
+    <section class="container">
+      <div class="title">
+        <h2>Galéria</h2>
+      </div>
+     
+      <article class="galleryTwo">
+
+      </article>
+    </section>
+    <!-- modal -->
+
+    <!-- Modal -->
+    <div class="modal">
+      <div class="modal-content">
+        <!-- Main image with thumbnail strip inside -->
+        <div class="main-img-wrapper">
+          <!-- prev next buttons -->
+          <button class="prev-btn" title="Previous">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <button class="next-btn" title="Next">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+          <img src="./img/gallery/1.jpg" class="main-img" alt="ss" />
+          <div class="modal-images">
+            <img
+              src="./img/gallery/1.jpg"
+              title="city-1"
+              id="1"
+              class="modal-img selected"
+              alt=""
+            />
+            <img
+              src="./img/gallery/2.jpg"
+              title="city-2"
+              id="2"
+              class="modal-img"
+              alt=""
+            />
+            <!-- Add more as needed -->
+          </div>
+        </div>
+
+        <!-- Control bar -->
+        <div class="modal-controls">
+          <div class="modal-controls-left">
+            <span class="sprite-btn btn-play" title="Play"></span>
+            <span class="sprite-btn btn-prev-control" title="Previous"></span>
+            <span class="sprite-btn btn-next-control" title="Next"></span>
+
+            <span class="img-counter">2/7</span>
+          </div>
+          <div class="modal-controls-right">
+            <span class="sprite-btn btn-close" title="Close"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="footer-placeholder"></div>
     <script src="/js/footer.js"></script>
-    <script type="module" src="app.js"></script>
+    <script type="module" src="/js/gallery.js"></script>
   </body>
 </html>

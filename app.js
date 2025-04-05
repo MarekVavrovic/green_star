@@ -410,4 +410,5 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // 2. Then instantiate Gallery AFTER images exist
   const gallery = new Gallery(getElement(".gallery"));
+  const galleryTwo = new Gallery(getElement("gallery-2"));
 });
