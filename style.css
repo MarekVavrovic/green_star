@@ -758,7 +758,7 @@ section.slider {
 
 .mission-content:hover::after {
   opacity: 1;
-  transform: scale(1.1); /* optional: hover animation */
+  transform: scale(1.1);
 }
 
 .mission-content.red::after {
@@ -1486,6 +1486,7 @@ aside p {
   margin: 4.5rem 0 4rem 0;
   color: #e8e8e8;
 }
+
 .sidebar-footer h2 {
   padding-top: 0px;
   font-family: "Kalam", cursive;
@@ -1501,9 +1502,9 @@ aside p {
   color: #fff;
   display: flex;
   flex-direction: column;
-  gap: 0.8rem;
+  gap: 0.25rem;
   text-align: left;
-  margin: 0;
+ 
 }
 
 .textwidget ul li {
@@ -1521,6 +1522,7 @@ aside p {
   width: 20px;
   height: 20px;
   margin-right: 0.5rem;
+vertical-align: middle;
   filter: brightness(0) invert(1);
 }
 
@@ -1578,6 +1580,8 @@ aside p {
 @media screen and (min-width: 768px) {
   .sidebar-footer aside {
     text-align: left;
+    margin-right: 3rem;
+    margin-top: 3rem;
   }
   .row {
     display: flex;
@@ -1836,7 +1840,7 @@ article.hidden {
 
 article.google-maps {
   width: 100%;
-  background-color: #f6141b;
+ 
 }
 
 .maps-outer {
@@ -1851,6 +1855,38 @@ article.google-maps {
   width: 100%;
   height: 45vh;
   position: relative;
+}
+
+.loading {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  background-color: #e8eaed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.spinner {
+  border: 6px solid #f3f3f3;
+  border-top: 6px solid #704825;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  animation: spin 1s linear infinite;
+}
+
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 .maps-inner iframe {
@@ -1878,42 +1914,42 @@ article.google-maps {
   align-items: center;
 }
 
-.contact-wrapper{
- padding:1rem;
+.contact-wrapper {
+  padding: 1rem;
   margin: 0 auto;
   text-align: center;
-  line-height: 1.6rem
+  line-height: 1.6rem;
 }
-.contact-wrapper h1{
+.contact-wrapper h1 {
   margin: 1rem 0;
   letter-spacing: 2px;
 }
-.contact-wrapper span{
+.contact-wrapper span {
   color: #704825;
   font-size: 24px;
-  font-family: "Open Sans",sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-weight: 200;
 }
-.contact-wrapper p{
+.contact-wrapper p {
   font-size: 1rem;
-  font-family: "Open Sans",sans-serif;
-  color: #777777;
+  font-family: "Open Sans", sans-serif;
+  color: darkolivegreen;
 }
 
-.contact-wrapper a{
-   color: #704825;
-   font-size: 1rem;
-  font-family: "Open Sans",sans-serif;
+.contact-wrapper a {
+  color: #704825;
+  font-size: 1rem;
+  font-family: "Open Sans", sans-serif;
   font-weight: 400;
-  text-decoration:underline;
+  text-decoration: underline;
 }
 
 .container-xx1 {
-  min-height: 100vh;
+  max-height: 80vh;
   display: flex;
   flex-direction: column;
-  justify-content: center; /* vertical centering */
-  align-items: center;     /* horizontal centering */
+  justify-content: center;
+  align-items: center;
   padding: 2rem 1rem;
   text-align: center;
 }
@@ -1924,7 +1960,6 @@ article.google-maps {
   font-size: 28px;
   margin: 3rem auto;
   color: #704825;
-
 }
 
 .container-xx1 .title::after {
@@ -1937,7 +1972,7 @@ article.google-maps {
   background-color: #ffd823;
 }
 
-.xx-2{
+.xx-2 {
   font-size: 2.5rem;
   font-weight: 400;
 }
@@ -1946,12 +1981,11 @@ article.google-maps {
   width: 100%;
   max-width: 600px;
   padding: 1rem;
-
 }
 
 .form-control-xx3 {
   display: block;
-  width: 100%;         
+  width: 100%;
   padding: 0.75rem 1rem;
   border: transparent;
   margin-bottom: 1.25rem;
@@ -1963,12 +1997,10 @@ article.google-maps {
   text-align: left;
 }
 
-
 .form-control-xx3::placeholder {
   font-family: "Open Sans", sans-serif;
   font-size: 16px;
   color: #777777;
- 
 }
 
 @media screen and (min-width: 768px) {
@@ -1979,7 +2011,13 @@ article.google-maps {
   .contact-inner {
     flex-direction: row;
     justify-content: space-between;
+    align-items: stretch;
+  }
+  .contact-wrapper p {
+    font-size: 1.1rem;
+    color: #777777;
   }
 }
+
 
 
