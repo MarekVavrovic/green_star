@@ -16,3 +16,21 @@ fetch("/partials/footer.html")
       }
     });
   });
+
+
+  //BACK TO THE TOP
+  document.addEventListener("DOMContentLoaded", function () {
+    const backToTopBtn = document.querySelector(".back-to-top");
+
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 250) {
+        backToTopBtn.style.display = "flex";
+      } else {
+        backToTopBtn.style.display = "none";
+      }
+    });
+
+    backToTopBtn.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  });

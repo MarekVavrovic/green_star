@@ -446,28 +446,40 @@ document.addEventListener("DOMContentLoaded", function () {
   const nav = document.querySelector("nav.sticky-nav");
 
   window.addEventListener("scroll", function () {
-    if (window.scrollY > 100) {
-      console.log(window.scrollY);
-      nav.classList.add("nav-shrink");
+    if (window.innerWidth >= 768) {
+      if (window.scrollY > 100) {
+        nav.classList.add("nav-shrink");
+      } else {
+        nav.classList.remove("nav-shrink");
+      }
     } else {
+      // Make sure to REMOVE nav-shrink class on mobile if it was added previously
       nav.classList.remove("nav-shrink");
     }
   });
 });
 
-// document.addEventListener("DOMContentLoaded", function () {
-//   const nav = document.querySelector("nav.sticky-nav");
 
-//   if (!nav) return;
 
-//   window.addEventListener("scroll", function () {
-//     const scrollTop = window.scrollY || window.pageYOffset;
+// BACK TO THE TOP BUTTON
 
-//     if (scrollTop > 0) {
-//       nav.classList.add("nav-shrink");
-//     } else {
-//       nav.classList.remove("nav-shrink");
-//     }
-//   });
-// });
+document.addEventListener("DOMContentLoaded", function () {
+  const backToTopBtn = document.querySelector(".back-to-top");
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 250 ) {
+      backToTopBtn.style.display = "flex";
+    } else {
+      backToTopBtn.style.display = "none";
+    }
+  });
+
+  backToTopBtn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+});
+
+
+
+
 
