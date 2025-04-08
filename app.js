@@ -446,7 +446,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const nav = document.querySelector("nav.sticky-nav");
 
   window.addEventListener("scroll", function () {
-    if (window.scrollY > 0) {
+    if (window.scrollY > 100) {
+      console.log(window.scrollY);
       nav.classList.add("nav-shrink");
     } else {
       nav.classList.remove("nav-shrink");
