@@ -1,32 +1,58 @@
 import sliders, { testimony, mission, galleryData } from "./data.js";
 
-document.addEventListener("DOMContentLoaded", function () {
-  const links = document.querySelectorAll(".links a");
-
-  links.forEach((link) => {
-    if (link.href === window.location.href) {
-      link.parentElement.parentElement.classList.add("active-link");
-    }
-  });
-});
 
 const navToggle = document.querySelector(".nav-toggle");
 const links = document.querySelector(".links");
 
+function hideIconsOnMobile() {
+  if (window.innerWidth < 768) {
+    document.querySelectorAll(".links li i").forEach((icon) => {
+      icon.style.display = "none";
+    });
+  }
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  hideIconsOnMobile();
+
+ 
+  const navLinks = document.querySelectorAll(".links a.green-bg");
+  navLinks.forEach((link) => {
+    if (link.href === window.location.href) {
+      link.classList.add("active-link");
+    }
+  });
+});
+
+
+// Toggle nav open/close
 navToggle.addEventListener("click", function () {
   if (links.style.maxHeight) {
-    links.style.maxHeight = null; // Close menu
+    links.style.maxHeight = null;
   } else {
-    links.style.maxHeight = links.scrollHeight + "px"; // Expand menu
+    links.style.maxHeight = links.scrollHeight + "px";
+    hideIconsOnMobile();
   }
 });
 
-//  menu is visible on larger screens
+// On resize
 window.addEventListener("resize", function () {
   if (window.innerWidth >= 768) {
-    links.style.maxHeight = null; // Remove height restriction
+    links.style.maxHeight = null;
+
+    // Show icons again
+    document.querySelectorAll(".links li i").forEach((icon) => {
+      icon.style.removeProperty("display");
+    });
+  } else {
+    hideIconsOnMobile();
   }
 });
+
+
+
+
+
 
 const container = document.querySelector(".slider-container");
 const nextBtn = document.querySelector(".next-btn-slider");
@@ -112,7 +138,7 @@ container.innerHTML = sliders
           ${
             slideIndex === 0
               ? `<img src=${crocodile} class="crocodile" alt="crocodile" />`
-              : `<button class="btn-contact">Kontaktujte nás &gt</button>`
+              : `<a href="kontakt.html"><button class="btn-contact">Kontaktujte nás &gt</button></a>`
           }
           
         </div>
@@ -410,5 +436,37 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // 2. Then instantiate Gallery AFTER images exist
   const gallery = new Gallery(getElement(".gallery"));
-  const galleryTwo = new Gallery(getElement("gallery-2"));
+ 
 });
+
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  const nav = document.querySelector("nav.sticky-nav");
+
+  window.addEventListener("scroll", function () {
+    if (window.scrollY > 0) {
+      nav.classList.add("nav-shrink");
+    } else {
+      nav.classList.remove("nav-shrink");
+    }
+  });
+});
+
+// document.addEventListener("DOMContentLoaded", function () {
+//   const nav = document.querySelector("nav.sticky-nav");
+
+//   if (!nav) return;
+
+//   window.addEventListener("scroll", function () {
+//     const scrollTop = window.scrollY || window.pageYOffset;
+
+//     if (scrollTop > 0) {
+//       nav.classList.add("nav-shrink");
+//     } else {
+//       nav.classList.remove("nav-shrink");
+//     }
+//   });
+// });
+
