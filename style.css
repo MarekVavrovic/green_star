@@ -63,7 +63,7 @@ a {
   border-radius: 50%;
   font-size: 1.25rem;
   cursor: pointer;
-  z-index: 999;
+  z-index:30;
   display: none;
   align-items: center;
   justify-content: center;
@@ -1995,7 +1995,7 @@ article.google-maps {
 }
 
 .container-xx1 {
-  max-height: 80vh;
+  max-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
