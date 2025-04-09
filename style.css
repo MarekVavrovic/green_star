@@ -960,7 +960,7 @@ section.slider {
 .wrapper-testimony {
   position: relative;
   text-align: center;
-  min-height: 85vh; /* Fixed height instead of min-height */
+  min-height: 100vh; /* Fixed height instead of min-height 85*/
   background-image: url("/img/testimony/testimonials_bg.png");
   background-repeat: no-repeat;
   background-size: cover;
