@@ -119,7 +119,7 @@ nav {
 
 /* Navigation list */
 .links {
-  margin: 0 1.5rem;
+  margin: 0 1rem;
   display: block;
   max-height: 0;
   overflow: hidden;
@@ -1402,7 +1402,7 @@ Modal
   display: block;
   margin-top: 2rem;
   padding: 0.5rem 1rem;
-  color: #fff;
+  color: #ff0000;
   display: none;
 }
 .not-valid-tip {

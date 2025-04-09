@@ -34,3 +34,49 @@ fetch("/partials/footer.html")
       window.scrollTo({ top: 0, behavior: "smooth" });
     });
   });
+
+
+  //Form validation
+  document.addEventListener("DOMContentLoaded", function () {
+    const forms = document.querySelectorAll("form[action*='formspree.io']");
+
+    forms.forEach((form) => {
+      const nameInput = form.querySelector("input[name='name']");
+      const emailInput = form.querySelector("input[name='email']");
+      const messageTextarea = form.querySelector("textarea[name='message']");
+      const errorTips = form.querySelectorAll(".not-valid-tip");
+      const mainError = form.querySelector(".validation-error");
+
+      form.addEventListener("submit", function (e) {
+        let valid = true;
+
+        // Reset error states
+        errorTips.forEach((tip) => (tip.style.display = "none"));
+        if (mainError) mainError.style.display = "none";
+
+        if (!nameInput.value.trim()) {
+          const tip = nameInput.nextElementSibling;
+          if (tip) tip.style.display = "inline";
+          valid = false;
+        }
+
+        if (
+          !emailInput.value.trim() ||
+          !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailInput.value)
+        ) {
+          const tip = emailInput.nextElementSibling;
+          if (tip) tip.style.display = "inline";
+          valid = false;
+        }
+
+        if (!messageTextarea.value.trim()) {
+          if (mainError) mainError.style.display = "block";
+          valid = false;
+        }
+
+        if (!valid) {
+          e.preventDefault(); // Stop form submission
+        }
+      });
+    });
+  });
