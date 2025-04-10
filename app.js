@@ -181,10 +181,32 @@ const startSlider = (type) => {
 };
 
 // Button events
-nextBtn.addEventListener("click", () => startSlider());
-prevBtn.addEventListener("click", () => startSlider("prev"));
-heartLeft.addEventListener("click", () => startSlider("prev"));
-heartRight.addEventListener("click", () => startSlider());
+// Auto-switch every 7 seconds
+let autoSlideInterval = setInterval(() => startSlider(), 7000);
+
+// Optional: Reset interval if user manually navigates
+nextBtn.addEventListener("click", () => {
+  startSlider();
+  resetSliderTimer();
+});
+prevBtn.addEventListener("click", () => {
+  startSlider("prev");
+  resetSliderTimer();
+});
+heartLeft.addEventListener("click", () => {
+  startSlider("prev");
+  resetSliderTimer();
+});
+heartRight.addEventListener("click", () => {
+  startSlider();
+  resetSliderTimer();
+});
+
+function resetSliderTimer() {
+  clearInterval(autoSlideInterval);
+  autoSlideInterval = setInterval(() => startSlider(), 7000);
+}
+
 
 updateHeartColorsAndBackground();
 
