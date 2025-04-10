@@ -50,16 +50,56 @@ window.addEventListener("resize", function () {
 });
 
 
-
-
-
-
+//GSAP ANIMATION
 const container = document.querySelector(".slider-container");
 const nextBtn = document.querySelector(".next-btn-slider");
 const prevBtn = document.querySelector(".prev-btn-slider");
 const heartLeft = document.querySelector(".left-heart");
 const heartRight = document.querySelector(".right-heart");
 const sliderSection = document.querySelector("section.slider");
+
+const runGsapAnimation = () => {
+  const activeSlide = document.querySelector(".slide.active");
+  if (!activeSlide) return;
+
+  const greenStar = activeSlide.querySelector(".green-star, .green-star-next");
+  const kidImage = activeSlide.querySelector(".kids img, .kids-next img");
+  const skyElements = activeSlide.querySelectorAll(".sky-container img");
+  const texts = activeSlide.querySelectorAll(
+    ".text-1, .text-2, .text-2-next, .text-3, .text-3-next, .text-4"
+  );
+  const contactBtn = activeSlide.querySelector(".btn-contact");
+
+  // Reset
+  gsap.set([greenStar, kidImage, ...skyElements, ...texts, contactBtn], {
+    opacity: 0,
+    y: 50,
+  });
+
+  const tl = gsap.timeline();
+
+  if (greenStar) tl.to(greenStar, { opacity: 1, duration: 0.8 });
+
+  if (kidImage) {
+    tl.to(kidImage, { opacity: 1, x: 0, duration: 1 }, "-=0.5");
+  }
+
+  skyElements.forEach((el) => {
+    tl.to(el, { opacity: 1, y: 0, duration: 0.6, ease: "bounce.out" }, "-=0.4");
+  });
+
+  texts.forEach((el, i) => {
+    tl.to(el, { opacity: 1, y: 0, duration: 0.6 }, `+=${i * 0.2}`);
+  });
+
+  if (contactBtn) {
+    tl.to(contactBtn, { opacity: 1, scale: 1, duration: 0.6 }, "-=0.3");
+  }
+};
+
+
+
+
 
 if (sliders.length !== 2) {
   console.error("This slider is designed for exactly 2 slides.");
@@ -177,38 +217,43 @@ const startSlider = (type) => {
     active.classList.add("next");
     next.classList.add("active");
   }
+
   updateHeartColorsAndBackground();
+
+ 
+  setTimeout(() => {
+    runGsapAnimation();
+  }, 150); // 100–200ms is usually enough
 };
 
+
+
+
+
 // Button events
-// Auto-switch every 7 seconds
-let autoSlideInterval = setInterval(() => startSlider(), 7000);
 
-// Optional: Reset interval if user manually navigates
-nextBtn.addEventListener("click", () => {
-  startSlider();
-  resetSliderTimer();
-});
-prevBtn.addEventListener("click", () => {
-  startSlider("prev");
-  resetSliderTimer();
-});
-heartLeft.addEventListener("click", () => {
-  startSlider("prev");
-  resetSliderTimer();
-});
-heartRight.addEventListener("click", () => {
-  startSlider();
-  resetSliderTimer();
-});
+// Manual button navigation (no reset needed anymore)
+nextBtn.addEventListener("click", () => startSlider());
+prevBtn.addEventListener("click", () => startSlider("prev"));
+heartLeft.addEventListener("click", () => startSlider("prev"));
+heartRight.addEventListener("click", () => startSlider());
 
-function resetSliderTimer() {
-  clearInterval(autoSlideInterval);
-  autoSlideInterval = setInterval(() => startSlider(), 7000);
-}
-
-
+// Initial background update
 updateHeartColorsAndBackground();
+
+// GSAP autoplay timeline
+const autoPlayTimeline = gsap.timeline({ repeat: -1 });
+
+// Call slide change
+autoPlayTimeline.call(() => {
+  startSlider();
+});
+
+// Wait for animation to finish (~3s), then delay next slide
+// Assuming your GSAP animation lasts ~4s total
+autoPlayTimeline.to({}, { duration: 7 + 4 }); // wait full time
+
+
 
 // heart-slider
 
