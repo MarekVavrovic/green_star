@@ -70,33 +70,86 @@ const runGsapAnimation = () => {
   );
   const contactBtn = activeSlide.querySelector(".btn-contact");
 
-  // Reset
-  gsap.set([greenStar, kidImage, ...skyElements, ...texts, contactBtn], {
-    opacity: 0,
-    y: 50,
-  });
+  // 💡 RESET positions before animating (percent-based to preserve layout)
+  if (greenStar) gsap.set(greenStar, { opacity: 0, yPercent: 30 });
 
+  if (kidImage) gsap.set(kidImage, { opacity: 0, xPercent: -100 });
+
+  gsap.set(skyElements, { opacity: 0, yPercent: 50 });
+
+  if (texts.length > 0) gsap.set(texts, { opacity: 0, yPercent: 30 });
+
+  if (contactBtn) gsap.set(contactBtn, { opacity: 0, scale: 0.8 });
+
+  // 🔄 TIMELINE SEQUENCE
   const tl = gsap.timeline();
 
-  if (greenStar) tl.to(greenStar, { opacity: 1, duration: 0.8 });
-
-  if (kidImage) {
-    tl.to(kidImage, { opacity: 1, x: 0, duration: 1 }, "-=0.5");
+  // Step 1: green star
+  if (greenStar) {
+    tl.to(greenStar, {
+      opacity: 1,
+      yPercent: 0,
+      duration: 0.8,
+      ease: "power2.out",
+    });
   }
 
-  skyElements.forEach((el) => {
-    tl.to(el, { opacity: 1, y: 0, duration: 0.6, ease: "bounce.out" }, "-=0.4");
+  // Step 2: kids image slides from left to center
+  if (kidImage) {
+    tl.to(
+      kidImage,
+      {
+        opacity: 1,
+        xPercent: 0,
+        duration: 1,
+        ease: "power2.out",
+      },
+      "-=0.5" // overlap slightly with previous
+    );
+  }
+
+  // Step 3: clouds/stars come from bottom with bounce
+  skyElements.forEach((el, i) => {
+    tl.to(
+      el,
+      {
+        opacity: 1,
+        yPercent: 0,
+        duration: 0.6,
+        ease: "bounce.out",
+      },
+      `-=${0.4 - i * 0.02}`
+    );
   });
 
+  // Step 4: texts appear word-by-word
   texts.forEach((el, i) => {
-    tl.to(el, { opacity: 1, y: 0, duration: 0.6 }, `+=${i * 0.2}`);
+    tl.to(
+      el,
+      {
+        opacity: 1,
+        yPercent: 0,
+        duration: 0.6,
+        ease: "power2.out",
+      },
+      `+=${i === 0 ? 0.3 : 0.15}`
+    );
   });
 
+  // Step 5: contact button (for slide 2)
   if (contactBtn) {
-    tl.to(contactBtn, { opacity: 1, scale: 1, duration: 0.6 }, "-=0.3");
+    tl.to(
+      contactBtn,
+      {
+        opacity: 1,
+        scale: 1,
+        duration: 0.6,
+        ease: "back.out(1.7)",
+      },
+      "-=0.4"
+    );
   }
 };
-
 
 
 
@@ -223,7 +276,7 @@ const startSlider = (type) => {
  
   setTimeout(() => {
     runGsapAnimation();
-  }, 150); // 100–200ms is usually enough
+  }, 150); 
 };
 
 
